@@ -1,0 +1,22 @@
+<div class="container">
+    <h1> Polo가격 읽어오기 </h1>
+    <a href = "http://www.ralphlauren.co.kr/" target="_blank">랄프 로렌</a>
+    
+    <form action="/home/polowrite" method ="POST">
+      <div class="form-group">
+        <label for="inputURL">URL을 입력해주세요</label>
+        <input name ="urladdress" type="text" class="form-control" id="urladdressid" placeholder="주소를 입력하세요">
+      </div> 
+      <button type="submit" class="btn btn-default">제출</button>
+    </form>
+    
+    
+    <h2><%=@urlofpolo%></h2>
+    <h3>제품명 : <%=@poloproduct%> </h3>
+    <br>
+    <h3>가격 : <%=@poloprice%> </h3>
+    <br>
+    <a href = "/home/index">홈으로가기</a>
+    <br>
+
+</div>
