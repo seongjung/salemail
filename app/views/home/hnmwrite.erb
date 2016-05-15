@@ -18,6 +18,7 @@
     <br>
     
     <%=form_tag "/home/save", method: "post" do %>
+    <input type="hidden" name="pbrand" value=<%=@brand%>>
     <input type="hidden" name="purl" value=<%=@URL%>>
     <input type="hidden" name="pprice" value=<%=@price%>>
     <input type="hidden" name="pname" value=<%=@name%>>

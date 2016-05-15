@@ -6,18 +6,30 @@ class HomeController < ApplicationController
   
   def index
   end
-
+  # db에 저장
+  def save 
+          
+      Info.create(user_id: current_user.id,
+                  brand: "hnm",
+                  product_name: params[:pname],
+                  product_price: params[:pprice].to_i,
+                  product_url: params[:purl])
+ 
+      redirect_to "/system/mypage"
+  end    
+  
   def hnm
   end
   
   def hnmwrite
     #성중오빠 짱짱맨 
+    @brand = "hnm"
     @URL = params[:urladdress]
     uri = URI(@URL)
     html_doc = Nokogiri::HTML(Net::HTTP.get(uri))
     @price = html_doc.css("span.actual-price").inner_text # span이란 태그 중 actual-price ID가 있는 걸 찾는다.
     @name = html_doc.css("form#product//h1").inner_text # form이란 태그 중 prodcut Class 가 있는 걸 찾고 그 안에 h1 태그를 찾는다.
-    @img = html_doc.css("div.zoom-pan")
+    @img_src = html_doc.css("div.zoom-pan/@src").to_s
   
   end
   
@@ -38,6 +50,7 @@ class HomeController < ApplicationController
     @polodoc = Nokogiri::HTML(open(@urlofpolo))
     @poloproduct = @polodoc.xpath('//div[@class="pdd_title box"]/h3').inner_text 
     @poloprice = @polodoc.xpath('//p[@class="pdd_price"]/span').inner_text
+    
     
   end
   
@@ -72,11 +85,6 @@ class HomeController < ApplicationController
   
   def eightseconds
 
-
-    @doc = Nokogiri::HTML(open("http://www.ssfshop.com/public/goods/detail/GM0016041892786/view"))
-    @product = @doc.xpath("//h3[@class='prdTit']").inner_text
-    @price = @doc.xpath("//strong[@id='sPriceStrong']").inner_text
-
   end
   
   def eightseconds_write
@@ -92,14 +100,6 @@ class HomeController < ApplicationController
   
   def mixxo
 
-
-    @doc = Nokogiri::HTML(open("http://www.mixxo.com/Style/StyleDetail.aspx?StyleCode=MIBL62512G&CategoryIdx=2950&ColCode="))
-    @product = @doc.xpath("//span[@id='ctl00_ContentPlaceHolder1_StyleName']").inner_text
-    @product_img = @doc.xpath("//img[@class='b_img']/@src").to_s
-    @price = @doc.xpath("//dd[@class='pdPrice']").inner_text
-    @price_dc = @doc.xpath("//dd[@class='dcPrice']").inner_text
-    
-
   end
   
   def mixxo_write
@@ -113,17 +113,7 @@ class HomeController < ApplicationController
     
 
   end
-  
-  def save
-          
-      Info.create(user_id: current_user.id,
-                  brand: "hnm",
-                  product_name: params[:pname],
-                  product_price: params[:pprice].to_i,
-                  product_url: params[:purl])
- 
-      redirect_to "/system/mypage"
-  end          
+       
   
 
 end
