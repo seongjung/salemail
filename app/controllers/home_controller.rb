@@ -1,6 +1,9 @@
 require 'open-uri'
 
 class HomeController < ApplicationController
+  before_action :authenticate_user!, only: [:write]
+  
+  
   def index
   end
 
