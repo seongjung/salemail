@@ -7,9 +7,9 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">-->
+  <link rel="stylesheet" href="https://bootswatch.com/united/bootstrap.min.css">
   
-  <link rel="stylesheet" href="https://bootswatch.com/slate/bootstrap.min.css">
+  <!--<link rel="stylesheet" href="https://bootswatch.com/slate/bootstrap.min.css">-->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   
   
@@ -25,12 +25,15 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-      <%if user_signed_in? %>
+      
+      <%if user_signed_in? %>  
+        <li><a href="/system/mypage">마이페이지</a></li>
         <li><a href="/users/sign_out" data-method="delete">로그아웃</a></li>
       <%else%>
         <li><a href="/users/sign_in">로그인</a></li>
         <li><a href="/users/sign_up">회원가입</a></li>
       <%end%>
+      
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

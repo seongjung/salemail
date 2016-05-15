@@ -1,0 +1,16 @@
+<div style="width:500px; height:800px; top: 50%; left: 50%; margin: -400px 0px 0px -250px; position:absolute;">
+    <div style="display:table-cell; width:500px; height:800px; text-align:center; vertical-align: middle;">
+        <h2 style="margin-bottom:40px">상품을 찾았습니다!</h2>
+        <div><img src="<%=@product_img%>"></div>
+        <h4>Product name : <%= @product%></h4><br>
+        <h4>Price : <%= @price%></h2>
+      <form action="/home/eightseconds_write" method ="POST" style="margin-top:30px; margin-bottom:30px">
+      <div class="form-group" style="width:500px">
+        <input name ="urladdress" type="text" class="form-control" id="urladdressid" placeholder="페이지 주소를 입력하세요">
+      </div> 
+      <button type="submit" class="btn btn-default">다른 상품 찾기</button>
+     </form>
+    <a href="/home/index"><button type="submit" class="btn btn-default">메인으로 돌아가기</button></a> 
+    </div>
+</div>
+    
