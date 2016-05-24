@@ -1,9 +1,10 @@
+<!--xpath 오류남-->
 <div style="width:500px; height:800px; top: 50%; left: 50%; margin: -400px 0px 0px -250px; position:absolute;">
     <div style="display:table-cell; width:800px; height:800px; text-align:center; vertical-align: middle;">
         <h2 style="margin-bottom:40px">상품을 찾았습니다!</h2>
-        <div><img src="<%=@product_img%>"></div>
-        <h4 style="margin-top:20px">Product name : <%= @product%></h4>
-        <h4>Price : <%= @price_dc%></h2>
+        <div><img src="<%=@img_src %>"></div>
+        <h4 style="margin-top:20px">Product name : <%= @name %></h4>
+        <h4>Price : <%= @price%></h2>
       <form action="/home/mixxo_write" method ="POST" style="margin-top:30px; margin-bottom:30px">
       <div class="form-group" style="width:500px">
         <input name ="urladdress" type="text" class="form-control" id="urladdressid" placeholder="페이지 주소를 입력하세요">

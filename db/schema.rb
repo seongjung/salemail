@@ -13,13 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160515053600) do
 
-  create_table "bbproducts", force: :cascade do |t|
-    t.string   "pname"
-    t.integer  "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "infos", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "brand"
@@ -27,6 +20,8 @@ ActiveRecord::Schema.define(version: 20160515053600) do
     t.string   "product_price"
     t.string   "product_img"
     t.string   "product_url"
+    t.string   "product_code"
+    t.string   "sale_price"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end

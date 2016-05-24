@@ -1,0 +1,10 @@
+<input type="hidden" id="fail" value="<%=@fail%>">
+<script>
+$(function(){
+var check_fail = $( '#fail' ).val();
+    if( check_fail == "1" ){
+            alert( "이미 체크 하셨습니다." );
+            history.back();
+    }
+});
+</script>

@@ -1,22 +1,21 @@
 <body class="container">
     
     <!--브랜드 로고 삽입하기-->
-      <a href = "http://www.uniqlo.kr/" target="_blank"> 
-        <img src="/uniqlo.png" alt="UNIQLO" height="60" width="60"> 
+      <a href = "http://store.musinsa.com/" target="_blank"> 
+        <img src="/musinsa.jpg" alt="MUSINSA" height="30" width="100"> 
       </a><hr>
     
     <!--URL 입력창-->
-    <form action="/home/uniqlo_write" method ="POST">
+    <form action="/home/musinsa_write" method ="POST">
       <div class="form-group">
         <label for="inputURL"> 할인 알림을 원하는 상품의 URL을 입력해주세요</label>
         <input name ="urladdress" type="text" class="form-control" id="urladdressid" placeholder="주소를 입력하세요"
-               value = "http://www.uniqlo.kr/display/showDisplayCache.lecs?goodsNo=UQ31063667&displayNo=UQ1A03A01A12&storeNo=22&siteNo=9">
+               value = "http://store.musinsa.com/app/product/detail/318051/0">
       </div> 
       <button type="submit" class="btn btn-default">검색하기</button>
     </form>
     
-    
-  <!--제품 정보 보여주기-->
+        <!--제품 정보 보여주기-->
   <hr><h4><strong><%= @name %></strong> 의 가격정보입니다.</h4>
   
   <div class="container" style="margin-top: 20px;">
@@ -57,7 +56,6 @@
         </div>
     </div>
   </div>  
-      
     
     
 </body>

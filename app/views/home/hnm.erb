@@ -1,13 +1,19 @@
-<div class="container">
-    <h1> H&M가격 읽어오기 </h1>
+<body class="container">
     
-    <form action="/home/hnmwrite" method ="POST">
+    <!--브랜드 로고 삽입하기-->
+      <a href = "http://www.hm.com/kr/" target="_blank"> 
+        <img src="/hnm.png" alt="H&M" height="40" width="110"> 
+      </a><hr>
+    
+    <!--URL 입력창-->
+    <form action="/home/hnm_write" method ="POST">
       <div class="form-group">
-        <label for="inputURL">URL을 입력해주세요</label>
-        <input name ="urladdress" type="text" class="form-control" id="urladdressid" placeholder="주소를 입력하세요" value="http://www.hm.com/kr/product/47587">
+        <label for="inputURL"> 할인 알림을 원하는 상품의 URL을 입력해주세요</label>
+        <input name ="urladdress" type="text" class="form-control" id="urladdressid" placeholder="주소를 입력하세요"
+               value = "http://www.hm.com/kr/product/45889?article=45889-B">
       </div> 
-      <button type="submit" class="btn btn-default">제출</button>
+      <button type="submit" class="btn btn-default">검색하기</button>
     </form>
     
-    <a href="/">홈으로 가기</a>
-</div>
+    
+</body>

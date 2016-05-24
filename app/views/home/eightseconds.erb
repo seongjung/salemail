@@ -1,13 +1,19 @@
- <div style="width:500px; height:500px; top: 50%; left: 50%; margin: -250px 0px 0px -250px; position:absolute;">
-    <div style="display:table-cell; width:500px; height:500px; text-align:center; vertical-align: middle;">
-        <h1 style="color:#b30000; margin-bottom:30px" >8seconds 상품찾기</h1>
-      <form action="/home/eightseconds_write" method ="POST"  >
-      <div class="form-group" style="width:500px">
-        <label for="inputURL">URL을 입력해주세요</label>
-        <input name ="urladdress" type="text" class="form-control" id="urladdressid" placeholder="페이지 주소를 입력하세요" value="http://www.ssfshop.com/public/goods/detail/GM0016032990144/view">
-      </div> 
-          <button type="submit" class="btn btn-default">제출</button>
-        </form>
-     </div>
-</div>
+<body class="container">
     
+    <!--브랜드 로고 삽입하기-->
+      <a href = "http://www.ssfshop.com/public/display/brand/BDMA07A01/view" target="_blank"> 
+        <img src="/eightseconds.png" alt="8seconds" height="30" width="120"> 
+      </a><hr>
+    
+    <!--URL 입력창-->
+    <form action="/home/eightseconds_write" method ="POST">
+      <div class="form-group">
+        <label for="inputURL"> 할인 알림을 원하는 상품의 URL을 입력해주세요</label>
+        <input name ="urladdress" type="text" class="form-control" id="urladdressid" placeholder="주소를 입력하세요"
+               value = "http://www.ssfshop.com/public/goods/detail/GM0016040491158/view">
+      </div> 
+      <button type="submit" class="btn btn-default">검색하기</button>
+    </form>
+    
+    
+</body>

@@ -1,10 +1,16 @@
 <h1>마이페이지</h1>
 
 <%@myinfo.each do |x|%>
-<h2><%=x.user_id%>
+<div>
+<%=x.user_id%><br>
+<%=x.brand%><br>
+<%=x.product_name%><br>
+<%=x.product_price%><br>
+<%=x.product_url%><br>
+<a href ="/system/destroy/<%= x.id %>"><span class="label label-danger">Delete</span></a>
 
-<%=x.brand%>
-<%=x.product_name%>
-<%=x.product_url%></h2>
-<br>
-<%end %>
+</div>
+<hr>
+<% end %>
+
+<a href="/system/check_all_price">전부 체크하기</a>

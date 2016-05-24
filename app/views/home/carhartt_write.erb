@@ -1,22 +1,20 @@
 <body class="container">
     
     <!--브랜드 로고 삽입하기-->
-      <a href = "http://www.uniqlo.kr/" target="_blank"> 
-        <img src="/uniqlo.png" alt="UNIQLO" height="60" width="60"> 
+      <a href = "http://www.shop.carhartt-wip.co.kr/" target="_blank"> 
+        <img src="/carhartt.png" alt="CARHARTT WIP" height="28" width="120"> 
       </a><hr>
     
     <!--URL 입력창-->
-    <form action="/home/uniqlo_write" method ="POST">
+    <form action="/home/carhartt_write" method ="POST">
       <div class="form-group">
         <label for="inputURL"> 할인 알림을 원하는 상품의 URL을 입력해주세요</label>
         <input name ="urladdress" type="text" class="form-control" id="urladdressid" placeholder="주소를 입력하세요"
-               value = "http://www.uniqlo.kr/display/showDisplayCache.lecs?goodsNo=UQ31063667&displayNo=UQ1A03A01A12&storeNo=22&siteNo=9">
+               value = "http://www.shop.carhartt-wip.co.kr/front/onlineShop/goodsDetail.do?ubiGdsNo=CA16SSSTWO02599001">
       </div> 
       <button type="submit" class="btn btn-default">검색하기</button>
     </form>
-    
-    
-  <!--제품 정보 보여주기-->
+        <!--제품 정보 보여주기-->
   <hr><h4><strong><%= @name %></strong> 의 가격정보입니다.</h4>
   
   <div class="container" style="margin-top: 20px;">
@@ -26,7 +24,6 @@
         </div>
         <!--상품 정보 보여주기-->
         <div class = "good_info">
-          <h2><strong> <%= @name %> </strong></h2></br>          
             <table style="width:100%">
                 <tr>
                   <td class = "price_label">URL</td>
@@ -38,7 +35,7 @@
                 </tr>
             </table>
           <!--table과 button 사이에 공간 만들기: 더 나은 방법 없을까요-->
-          <p style = "height: 150px"> </p>  
+          <p style = "height: 160px"> </p>  
             
             <div> 
               <%= form_tag "/home/save", method: "post" do %>
@@ -56,9 +53,10 @@
             
         </div>
     </div>
-  </div>  
-      
-    
-    
+  </div>
+
+
 </body>
+
+
 
