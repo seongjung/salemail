@@ -1,44 +1,37 @@
-<body class="container">
-    
+<div>
     <!--브랜드 로고 삽입하기-->
-      <a href = "http://www.uniqlo.kr/" target="_blank"> 
-        <img src="/uniqlo.png" alt="UNIQLO" width="5%"> 
+      <a href = "<%=@brand_url%>" target="_blank"> 
+        <img src="/<%=@brand%>.png" alt="<%=@brand%>" width="110"> 
       </a><hr>
     
     <!--URL 입력창-->
-    <form action="/home/uniqlo_write" method ="POST">
+    <form action="/home/all_write" method ="POST">
       <div class="form-group">
         <label for="inputURL"> 할인 알림을 원하는 상품의 URL을 입력해주세요</label>
         <input name ="urladdress" type="text" class="form-control" id="urladdressid" placeholder="주소를 입력하세요"
-               value = "http://www.uniqlo.kr/display/showDisplayCache.lecs?goodsNo=UQ31063667&displayNo=UQ1A03A01A12&storeNo=22&siteNo=9">
+               value = "http://www.hm.com/kr/product/45889?article=45889-B">
       </div> 
       <button type="submit" class="btn btn-default">검색하기</button>
     </form>
     
-    
-  <!--제품 정보 보여주기-->
-  <hr><h4><strong><%= @name %></strong> 의 가격정보입니다.</h4></br>
+      <!--제품 정보 보여주기-->
+  <hr><h4><strong><%= @name %></strong> 의 가격정보입니다.</h4>
   
-  <div class="container" style="margin-top: 20px;">
+  <div style="margin-top: 20px;">
     <div class="row">
         <div class="col-md-4 col-xs-6">
-            <div><img src="<%=@img_src%>" width="100%"></div>
+            <div><img src="<%=@img_src%>" width="390px"></div>
         </div>
         <!--상품 정보 보여주기-->
         <div class = "good_info">
-          <h2><strong> <%= @name %> </strong></h2></br>          
-            <table style="width:100%">
-                <tr>
-                  <td class = "price_label">URL</td>
-                  <td class = "good_url"><a href = <% @URL %> target="_blank"><%= @URL %></a></td> 
-                </tr>
-                <tr>
-                  <td class = "price_label">가격</td>
-                  <td class = "price_number"><strong> <%= @price %> </strong>원</td> 
-                </tr>
-            </table>
-          <!--table과 button 사이에 공간 만들기: 더 나은 방법 없을까요-->
-          <p style = "height: 150px"> </p>  
+          <h2><strong> <%= @name %> </strong></h2></br>
+            <p style = "height: 280px">
+              <span class = "price_label"> URL </span>
+             <span class = "good_url"> <a href = <% @URL %> target="_blank"><%= @URL %></a> </span></br>
+              <span class = "price_label">가격 </span>
+              <span class = "price_number"><strong> <%=@price %></strong>원</span>
+            </p>
+            <!--db로 저장하기-->
             <div> 
               <%= form_tag "/home/save", method: "post" do %>
                 <input type="hidden" name="pname" value="<%=@name%>">
@@ -51,11 +44,11 @@
               <button type="submit" class="btn btn_into_basket"> 할인알림 메일 받기 </button>
               <% end %>
             </div>
+            <!--db로 저장하기 끝 -->
         </div>
     </div>
-  </div>  
-      
+    
+  </div>
     
     
-</body>
-
+</div>

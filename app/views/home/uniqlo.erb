@@ -1,4 +1,4 @@
-<body class="container">
+<div>
     
     <!--브랜드 로고 삽입하기-->
       <a href = "http://www.uniqlo.kr/" target="_blank"> 
@@ -6,15 +6,16 @@
       </a><hr>
     
     <!--URL 입력창-->
-    <form action="/home/uniqlo_write" method ="POST">
+    <form action="/home/all_write" method ="POST">
       <div class="form-group">
         <label for="inputURL"> 할인 알림을 원하는 상품의 URL을 입력해주세요</label>
         <input name ="urladdress" type="text" class="form-control" id="urladdressid" placeholder="주소를 입력하세요"
                value = "http://www.uniqlo.kr/display/showDisplayCache.lecs?goodsNo=UQ31063667&displayNo=UQ1A03A01A12&storeNo=22&siteNo=9">
+        <input type="hidden" name ="brand_name" class="form-control" value="uniqlo">
       </div> 
       <button type="submit" class="btn btn-default">검색하기</button>
     </form>
     
     
-</body>
+</div>
 

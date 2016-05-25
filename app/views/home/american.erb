@@ -6,11 +6,12 @@
       </a><hr>
     
     <!--URL 입력창-->
-    <form action="/home/american_write" method ="POST">
+    <form action="/home/all_write" method ="POST">
       <div class="form-group">
         <label for="inputURL"> 할인 알림을 원하는 상품의 URL을 입력해주세요</label>
         <input name ="urladdress" type="text" class="form-control" id="urladdressid" placeholder="주소를 입력하세요"
                value = "http://store.americanapparel.co.kr/ko/tie-dye-t-shirt-dress_rsavs3294td?c=Patti%20Tie-Dye">
+        <input type="hidden" name ="brand_name" class="form-control" value="american">
       </div> 
       <button type="submit" class="btn btn-default">검색하기</button>
     </form>

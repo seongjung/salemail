@@ -32,18 +32,18 @@ class HomeController < ApplicationController
 
 #사전식배열abcd goooood 굿맨
   
-  def american_write
+  # def american_write
   
-    @brand = "american"
-    @URL = params[:urladdress]
-    html_doc = Nokogiri::HTML(open(@URL))
-    @name = html_doc.xpath("//h1[@class='product-name']").inner_text.gsub(/\s/, '')
-    @price = html_doc.xpath("//div[@id='skuPriceId']/span").inner_text.gsub(/\D/, '')
-    @price_dc = html_doc.xpath("//div[@id='unknown']/span").inner_text.gsub(/\D/, '')
-    @img_src = html_doc.xpath("//img[@class='main-img']/@src").to_s
-    @code = "//div[@id='unknown']/span"
+  #   @brand = "american"
+  #   @URL = params[:urladdress]
+  #   html_doc = Nokogiri::HTML(open(@URL))
+  #   @name = html_doc.xpath("//h1[@class='product-name']").inner_text.gsub(/\s/, '')
+  #   @price = html_doc.xpath("//div[@id='skuPriceId']/span").inner_text.gsub(/\D/, '')
+  #   @price_dc = html_doc.xpath("//div[@id='unknown']/span").inner_text.gsub(/\D/, '')
+  #   @img_src = html_doc.xpath("//img[@class='main-img']/@src").to_s
+  #   @code = "//div[@id='unknown']/span"
     
-  end
+  # end
   
   def aritaum_write
     
@@ -72,44 +72,44 @@ class HomeController < ApplicationController
   def carhartt
   end
   
-  def carhartt_write
+  # def carhartt_write
     
-    @brand = "carhartt"
-    @URL = params[:urladdress]
-    html_doc = Nokogiri::HTML(open(@URL)) 
-    #[1]이 괄호밖에있어야하는경우가 문제 polo도마찬가지
-    @name = html_doc.xpath('//div[@class="txt02"]').inner_text.gsub(/\s/, '')
-    @price = html_doc.xpath('//span[@class="ico_price"]').inner_text.gsub(/\D/, '')
-    @img_src = html_doc.xpath('//div[@class="product_detail_img"]/img/@src')[1].to_s
-    @code = '//span[@class="ico_price"]'
-    
-  end
-  
-  def hnm_write
-
-    @brand = "hnm"
-    @URL = params[:urladdress]
-    uri = URI(@URL)
-    html_doc = Nokogiri::HTML(Net::HTTP.get(uri))
-    @name = html_doc.xpath('//ul[@class="breadcrumbs"]/li/strong').inner_text.gsub(/\s/, '')
-    @price = html_doc.xpath('//span[@class="price"]/span').inner_text.gsub(/\D/, '')
-    @img_src = html_doc.xpath('//img[@class="FASHION_FRONT"]/@src').to_s
-    @code = '//span[@class="price"]/span'
-    
-  end
-  #폴로폐업
-  # def polowrite
-   
-  #   @brand = "Polo"
+  #   @brand = "carhartt"
   #   @URL = params[:urladdress]
-  #   html_doc = Nokogiri::HTML(open(@URL))
-  #   @name = html_doc.xpath('//div[@class="pdd_title box"]/h3').inner_text.gsub(/\s/, '')
-  #   @price = html_doc.xpath('//p[@class="pdd_price"]/span')[1].inner_text.gsub(/\D/, '')
-  #   @img_src = html_doc.xpath('//ul[@class="box"]/li[1]/img/@src').to_s
-  #   @code = '//p[@class="pdd_price"]/span'
-  #
+  #   html_doc = Nokogiri::HTML(open(@URL)) 
+  #   #[1]이 괄호밖에있어야하는경우가 문제 polo도마찬가지
+  #   @name = html_doc.xpath('//div[@class="txt02"]').inner_text.gsub(/\s/, '')
+  #   @price = html_doc.xpath('//span[@class="ico_price"]').inner_text.gsub(/\D/, '')
+  #   @img_src = html_doc.xpath('//div[@class="product_detail_img"]/img/@src')[1].to_s
+  #   @code = '//span[@class="ico_price"]'
     
   # end
+  
+  # def hnm_write
+
+  #   @brand = "hnm"
+  #   @URL = params[:urladdress]
+  #   uri = URI(@URL)
+  #   html_doc = Nokogiri::HTML(Net::HTTP.get(uri))
+  #   @name = html_doc.xpath('//ul[@class="breadcrumbs"]/li/strong').inner_text.gsub(/\s/, '')
+  #   @price = html_doc.xpath('//span[@class="price"]/span').inner_text.gsub(/\D/, '')
+  #   @img_src = html_doc.xpath('//img[@class="FASHION_FRONT"]/@src').to_s
+  #   @code = '//span[@class="price"]/span'
+    
+  # end
+
+  def polowrite
+   
+    @brand = "Polo"
+    @URL = params[:urladdress]
+    html_doc = Nokogiri::HTML(open(@URL))
+    @name = html_doc.xpath('//div[@class="pdd_title box"]/h3').inner_text.gsub(/\s/, '')
+    @price = html_doc.xpath('//p[@class="pdd_price"]/span')[1].inner_text.gsub(/\D/, '')
+    @img_src = html_doc.xpath('//ul[@class="box"]/li[1]/img/@src').to_s
+    @code = '//p[@class="pdd_price"]/span'
+  
+    
+  end
   
   def eightseconds_write
 
@@ -159,18 +159,18 @@ class HomeController < ApplicationController
     
   end
  
-  def uniqlo_write
+  # def uniqlo_write
     
-    @brand = "UNIQLO"
-    @URL = params[:urladdress]
-    @doc = Nokogiri::HTML(open(@URL)) 
-    @name = @doc.xpath('//h2[@id="goodsNmArea"]').inner_text.gsub(/\s/, '')
-    @price = @doc.xpath('//p[@id="salePrice"]').inner_text.gsub(/\D/, '')
-    #유니클로 이미지 수정해야됌
-    #@img_src = @doc.xpath("//div[@id='prodImgDefault']/img/@src").to_s
-    @code = '//p[@id="salePrice"]'
+  #   @brand = "UNIQLO"
+  #   @URL = params[:urladdress]
+  #   @doc = Nokogiri::HTML(open(@URL)) 
+  #   @name = @doc.xpath('//h2[@id="goodsNmArea"]').inner_text.gsub(/\s/, '')
+  #   @price = @doc.xpath('//p[@id="salePrice"]').inner_text.gsub(/\D/, '')
+  #   #유니클로 이미지 수정해야됌
+  #   #@img_src = @doc.xpath("//div[@id='prodImgDefault']/img/@src").to_s
+  #   @code = '//p[@id="salePrice"]'
 
-  end
+  # end
   
   def imshopwrite
     
@@ -182,6 +182,57 @@ class HomeController < ApplicationController
     @price = html_doc.xpath('//p[@class="price"]').inner_text.gsub(/\D/, '')
     @img_src = html_doc.xpath('//img[@class="img"]/@src').to_s
     @code = '//p[@class="price"]'
+    
+  end
+  
+  def all_write
+    
+    if params[:brand_name] == "hm"
+      @brand_url = "http://www.hm.com/kr/"
+      @brand = params[:brand_name]
+      @URL = params[:urladdress]
+      uri = URI(@URL)
+      html_doc = Nokogiri::HTML(Net::HTTP.get(uri))
+      @name = html_doc.xpath('//ul[@class="breadcrumbs"]/li/strong').inner_text.gsub(/\s/, '')
+      @price = html_doc.xpath('//span[@class="price"]/span').inner_text.gsub(/\D/, '')
+      @img_src = html_doc.xpath('//img[@class="FASHION_FRONT"]/@src').to_s
+      @code = '//span[@class="price"]/span'
+    
+    elsif params[:brand_name]  == "uniqlo"
+      @brand_url = "http://www.uniqlo.kr/"
+      @brand = params[:brand_name]
+      @URL = params[:urladdress]
+      @doc = Nokogiri::HTML(open(@URL)) 
+      @name = @doc.xpath('//h2[@id="goodsNmArea"]').inner_text.gsub(/\s/, '')
+      @price = @doc.xpath('//p[@id="salePrice"]').inner_text.gsub(/\D/, '')
+      #유니클로 이미지 수정해야됌
+      #@img_src = @doc.xpath("//div[@id='prodImgDefault']/img/@src").to_s
+      @code = '//p[@id="salePrice"]'
+    
+    elsif params[:brand_name] == 'american'  
+      @brand_url = "http://store.americanapparel.co.kr/" 
+      @brand = "american"
+      @URL = params[:urladdress]
+      html_doc = Nokogiri::HTML(open(@URL))
+      @name = html_doc.xpath("//h1[@class='product-name']").inner_text.gsub(/\s/, '')
+      @price = html_doc.xpath("//div[@id='skuPriceId']/span").inner_text.gsub(/\D/, '')
+      @price_dc = html_doc.xpath("//div[@id='unknown']/span").inner_text.gsub(/\D/, '')
+      @img_src = html_doc.xpath("//img[@class='main-img']/@src").to_s
+      @code = "//div[@id='unknown']/span"
+    
+    elsif params[:brand_name] == 'carhartt' 
+      @brand_url = "http://www.shop.carhartt-wip.co.kr/"
+      @brand = "carhartt"
+      @URL = params[:urladdress]
+      html_doc = Nokogiri::HTML(open(@URL)) 
+      #[1]이 괄호밖에있어야하는경우가 문제 polo도마찬가지
+      @name = html_doc.xpath('//div[@class="txt02"]').inner_text.gsub(/\s/, '')
+      @price = html_doc.xpath('//span[@class="ico_price"]').inner_text.gsub(/\D/, '')
+      @img_src = html_doc.xpath('//div[@class="product_detail_img"]/img/@src')[1].to_s
+      @code = '//span[@class="ico_price"]'
+      
+    
+    end
     
   end
   
