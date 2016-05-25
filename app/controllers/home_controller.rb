@@ -25,12 +25,12 @@ class HomeController < ApplicationController
                     product_img: params[:pimg],
                     product_code: params[:pcode])
                     
-      
-      redirect_to "/system/mypage"
+        @fail = 2
+      # redirect_to "/system/mypage"
       end
   end
 
-#사전식배열abcd
+#사전식배열abcd goooood 굿맨
   
   def american_write
   
@@ -97,7 +97,7 @@ class HomeController < ApplicationController
     @code = '//span[@class="price"]/span'
     
   end
-  
+  #폴로폐업
   # def polowrite
    
   #   @brand = "Polo"
@@ -171,7 +171,19 @@ class HomeController < ApplicationController
     @code = '//p[@id="salePrice"]'
 
   end
-
+  
+  def imshopwrite
+    
+    @brand = "imshop"
+    @URL = params[:urladdress]
+    html_doc = Nokogiri::HTML(open(@URL)) 
+    #[1]이 괄호밖에있어야하는경우가 문제 polo도마찬가지
+    @name = html_doc.xpath('//h3[@class="name"]').inner_text.gsub(/\s/, '')
+    @price = html_doc.xpath('//p[@class="price"]').inner_text.gsub(/\D/, '')
+    @img_src = html_doc.xpath('//img[@class="img"]/@src').to_s
+    @code = '//p[@class="price"]'
+    
+  end
   
   
 end

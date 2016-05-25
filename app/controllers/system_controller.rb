@@ -14,7 +14,7 @@ class SystemController < ApplicationController
                 @doc = Nokogiri::HTML(open(address))  
                 @price = @doc.xpath(n.product_code).inner_text.gsub(/\D/, '') #새로운 가격 체크
 
-                if n.product_price == @price
+                if n.product_price != @price
                 
                       mg_client = Mailgun::Client.new("key-be21c48c7ce4476a2024cb1789bb67c6") #메일보내기
                       message_params =  {
@@ -45,6 +45,9 @@ class SystemController < ApplicationController
         redirect_to "/system/mypage" 
     end
     
+    
+    def c
+    end
     
     
     

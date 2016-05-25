@@ -1,16 +1,39 @@
-<h1>마이페이지</h1>
+<h3><strong>할인 알림 목록</strong></h3></br>
 
-<%@myinfo.each do |x|%>
-<div>
-<%=x.user_id%><br>
-<%=x.brand%><br>
-<%=x.product_name%><br>
-<%=x.product_price%><br>
-<%=x.product_url%><br>
-<a href ="/system/destroy/<%= x.id %>"><span class="label label-danger">Delete</span></a>
+<table class="table">
+    <thead>
+      <tr>
+        <th> No. </th>
+        <th> BRAND</th>
+        <th> ITEM</th>
+        <th> PRICE </th>
+        <th> URL </th>
+        <th>  </th>
+      </tr>
+  </thead>
 
-</div>
-<hr>
-<% end %>
 
-<a href="/system/check_all_price">전부 체크하기</a>
+<% @myinfo.each.with_index do |x, index|%>  
+  <tbody>
+      <tr>
+        <th scope="row"><%=index+1%></th>
+        <td scope="row"><img src="/<%=x.brand%>.png" height="7%"></td>
+        <td> <%=x.product_name%> </td>
+        <!--<td rowspan="2">  </td>-->
+        <td> <%=x.product_price%>원</td>
+        <td> 
+          <div class="btn-group" role="group" aria-label="...">
+          <a href = <%=x.product_url%> target="_blank"><span class="label label-default">이동하기</span></a>
+        </td>
+        <td>
+          <div class="btn-group" role="group" aria-label="...">
+          <a href ="/system/destroy/<%= x.id %>"><span class="label label-danger">삭제하기</span></a>
+        </td>
+      </tr>
+   </tbody>
+
+   
+  <% end %>
+</table> 
+
+      <!--<a href="/system/check_all_price">전부 체크하기</a>-->

@@ -2,7 +2,7 @@
     
     <!--브랜드 로고 삽입하기-->
       <a href = "http://www.oliveyoungshop.com/"> 
-        <img src="/oliveyoung.png" alt="OLIEVYOUNG" height="50" width="100"> </a>
+        <img src="/oliveyoung.png" alt="OLIEVYOUNG" width="11%"> </a>
     
     <!--URL 입력창-->
     <form action="/home/oliveyoung_write" method ="POST">
@@ -15,12 +15,12 @@
     </form>
     
         <!--제품 정보 보여주기-->
-  <hr><h4><strong><%= @name %></strong> 의 가격정보입니다.</h4>
+  <hr><h4><strong><%= @name %></strong> 의 가격정보입니다.</h4></br>
   
   <div class="container" style="margin-top: 20px;">
     <div class="row">
         <div class="col-md-4 col-xs-6">
-            <div><img src="<%=@img_src%>" width="320px"></div>
+            <div><img src="<%=@img_src%>" width="100%"></div>
         </div>
         <!--상품 정보 보여주기-->
         <div class = "good_info">
@@ -36,19 +36,18 @@
                 </tr>
             </table>
           <!--table과 button 사이에 공간 만들기: 더 나은 방법 없을까요-->
-          <p style = "height: 70px"> </p>  
+          <p style = "height: 100px"> </p>  
             
             <div> 
               <%= form_tag "/home/save", method: "post" do %>
-                <input type="hidden" name="name" value="<%=@name%>">
-                <input type="hidden" name="brand" value="<%=@brand%>">
-                <input type="hidden" name="price" value="<%=@price%>">
+                <input type="hidden" name="pname" value="<%=@name%>">
+                <input type="hidden" name="pbrand" value="<%=@brand%>">
+                <input type="hidden" name="pprice" value="<%=@price%>">
                 <input type="hidden" name="purl" value="<%=@URL%>">
-                <input type="hidden" name="ping" value="<%=@img_src%>">
-                <input type="hidden" name="code" value="<%=@code%>">
-            
+                <input type="hidden" name="pimg" value="<%=@img_src%>">
+                <input type="hidden" name="pcode" value="<%=@code%>">
                 
-              <button type="submit" class="bin btn_into_basket"> 할인알림 메일 받기 </button>
+              <button type="submit" class="btn btn_into_basket"> 할인알림 메일 받기 </button>
               <% end %>
             </div>
             
