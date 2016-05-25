@@ -6,11 +6,12 @@
       </a><hr>
     
     <!--URL 입력창-->
-    <form action="/home/mixxo_write" method ="POST">
+    <form action="/home/all_write" method ="POST">
       <div class="form-group">
         <label for="inputURL"> 할인 알림을 원하는 상품의 URL을 입력해주세요</label>
         <input name ="urladdress" type="text" class="form-control" id="urladdressid" placeholder="주소를 입력하세요"
                value = "http://www.mixxo.com/Style/StyleDetail.aspx?StyleCode=MIJK62421R">
+        <input type="hidden" name ="brand_name" class="form-control" value="mixxo">
       </div> 
       <button type="submit" class="btn btn-default">검색하기</button>
     </form>

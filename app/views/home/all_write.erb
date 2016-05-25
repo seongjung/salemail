@@ -10,6 +10,7 @@
         <label for="inputURL"> 할인 알림을 원하는 상품의 URL을 입력해주세요</label>
         <input name ="urladdress" type="text" class="form-control" id="urladdressid" placeholder="주소를 입력하세요"
                value = "http://www.hm.com/kr/product/45889?article=45889-B">
+        <input type="hidden" name="brand_name" value="<%=@brand%>">       
       </div> 
       <button type="submit" class="btn btn-default">검색하기</button>
     </form>
@@ -40,7 +41,7 @@
                 <input type="hidden" name="purl" value="<%=@URL%>">
                 <input type="hidden" name="pimg" value="<%=@img_src%>">
                 <input type="hidden" name="pcode" value="<%=@code%>">
-                
+
               <button type="submit" class="btn btn_into_basket"> 할인알림 메일 받기 </button>
               <% end %>
             </div>

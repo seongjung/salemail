@@ -1,42 +1,7 @@
-<!DOCTYPE html>
-<html >
-  <head>
-
-<style>
-.border-form-div {
-  max-width: 300px;
-  padding: 19px 29px 29px;
-  margin: 0 auto 20px;
-  background-color: #fff;
-  border: 1px solid #e5e5e5;
-  -webkit-border-radius: 5px;
-     -moz-border-radius: 5px;
-          border-radius: 5px;
-  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-          box-shadow: 0 1px 2px rgba(0,0,0,.05);
-}
-.border-form-div .form-signin-heading,
-.border-form-div .checkbox {
-  margin-bottom: 10px;
-}
-.border-form-div input[type="text"],
-.border-form-div input[type="email"],
-.border-form-div input[type="password"] {
-  font-size: 16px;
-  height: auto;
-  margin-bottom: 15px;
-  padding: 7px 9px;
-}
-</style>
-
-</head>
-
-<body>
 
 <div class="border-form-div">
-  
-<h2>회원 가입</h2>
+<center>  
+<h2>회원 가입</h2></center>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -47,28 +12,22 @@
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :비밀번호 %>
     <% if @minimum_password_length %>
-    <em>(최소 <%= @minimum_password_length %>자 이상으로)</em>
+    <em>(최소 <%= @minimum_password_length %>자 이상)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :비밀번호확인 %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "가입하기" %>
+    <%= f.submit "회원가입" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
 </div>    
-    
-    
-    
-  </body>
-</html>
-
