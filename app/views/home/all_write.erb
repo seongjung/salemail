@@ -1,7 +1,9 @@
-<div>
+<%= render :partial => "/layouts/navbar" %>
+
+<div class="container well" style="margin-top:100px; margin-bottom:100px">
     <!--브랜드 로고 삽입하기-->
       <a href = "<%=@brand_url%>" target="_blank"> 
-        <img src="/<%=@brand%>.png" alt="<%=@brand%>" width="110"> 
+        <center><img src="/<%=@brand%>.png" alt="<%=@brand%>" height="110px"></center>
       </a><hr>
     
     <!--URL 입력창-->
@@ -11,27 +13,42 @@
         <input name ="urladdress" type="text" class="form-control" id="urladdressid" placeholder="주소를 입력하세요"
                value = "http://www.hm.com/kr/product/45889?article=45889-B">
         <input type="hidden" name="brand_name" value="<%=@brand%>">       
-      </div> 
-      <button type="submit" class="btn btn-default">검색하기</button>
+       </div>
+        <button type="submit" class="btn btn-default">검색하기</button>
+    
     </form>
     
       <!--제품 정보 보여주기-->
-  <hr><h4><strong><%= @name %></strong> 의 가격정보입니다.</h4>
-  
+  <hr>
+  <br>
+  <br>
   <div style="margin-top: 20px;">
-    <div class="row">
-        <div class="col-md-4 col-xs-6">
-            <div><img src="<%=@img_src%>" width="390px"></div>
+    <div class="row" style="margin-bottom:50px; margin-left:10px; margin-right:10px">
+        <div class="fl col-md-4 col-xs-6">
+            <img src="<%=@img_src%>" width="390px">
         </div>
         <!--상품 정보 보여주기-->
-        <div class = "good_info">
-          <h2><strong> <%= @name %> </strong></h2></br>
-            <p style = "height: 280px">
-              <span class = "price_label"> URL </span>
-             <span class = "good_url"> <a href = <% @URL %> target="_blank"><%= @URL %></a> </span></br>
-              <span class = "price_label">가격 </span>
-              <span class = "price_number"><strong> <%=@price %></strong>원</span>
-            </p>
+        <div class = "fr col-md-7 col-md-offset-1 col-xs-6">
+          <h2><strong> <%= @name %> </strong></h2>
+            <!--<p style = "height: 200px">-->
+            <!--  <span class = "price_label"> URL </span>-->
+            <!--  <span class = "good_url"> <a href = "<%= @URL %>" target="_blank"><%= @URL %></a> </span></br>-->
+            <!--  <span class = "price_label">가격 </span>-->
+            <!--  <span class = "price_number"><strong> <%=@price %></strong>원</span>-->
+            <!--</p>-->
+            <table style="width:100%">
+                <tr>
+                  <td class = "write_label">URL</td>
+                  <td class = "write_url"><a href = <% @URL %> target="_blank"><%= @URL %></a></td> 
+                </tr>
+                <tr>
+                  <td class = "write_label"> PRICE</td>
+                  <td class = "write_number"><strong><%=@price%></strong>원</td> 
+                </tr>
+            </table>
+
+                    
+            
             <!--db로 저장하기-->
             <div> 
               <%= form_tag "/home/save", method: "post" do %>
@@ -41,8 +58,11 @@
                 <input type="hidden" name="purl" value="<%=@URL%>">
                 <input type="hidden" name="pimg" value="<%=@img_src%>">
                 <input type="hidden" name="pcode" value="<%=@code%>">
-
-              <button type="submit" class="btn btn_into_basket"> 할인알림 메일 받기 </button>
+						
+						 <p hight = "60%"></p>
+						 <button type="submit" class="btn btn-skin btn-lg btn-block" id="btnContactUs">
+									할인알림 메일로 받기</button>
+              <!--<button type="submit" class="btn btn_into_basket"> 할인알림 메일 받기 </button>-->
               <% end %>
             </div>
             <!--db로 저장하기 끝 -->

@@ -1,8 +1,11 @@
-<body class="container">
+<%= render :partial => "/layouts/navbar" %>
+
+<div class="container well" style="margin-top:100px">
     
     <!--브랜드 로고 삽입하기-->
       <a href = "http://www.oliveyoungshop.com/"> 
-        <img src="/oliveyoung.png" alt="OLIEVYOUNG" width="11%"> </a>
+        <center><img src="/oliveyoung.png" alt="OLIEVYOUNG" height="110px"></center> 
+      </a><hr>
     
     <!--URL 입력창-->
     <form action="/home/all_write" method ="POST">
@@ -14,7 +17,4 @@
       </div> 
       <button type="submit" class="btn btn-default">검색하기</button>
     </form>
-    
-    
-
-</body>
+</div>

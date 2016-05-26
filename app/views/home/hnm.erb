@@ -1,8 +1,10 @@
-<body class="container">
+<%= render :partial => "/layouts/navbar" %>
+
+<div class="container well" style="margin-top:100px">
     
     <!--브랜드 로고 삽입하기-->
       <a href = "http://www.hm.com/kr/" target="_blank"> 
-        <img src="/hm.png" alt="H&M" width="7%"> 
+        <center><img src="/hm.png" alt="H&M" height="110px"></center>
       </a><hr>
     
     <!--URL 입력창-->
@@ -15,6 +17,4 @@
       </div> 
       <button type="submit" class="btn btn-default">검색하기</button>
     </form>
-    
-    
-</body>
+</div>

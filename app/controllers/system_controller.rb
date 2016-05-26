@@ -3,7 +3,8 @@ class SystemController < ApplicationController
    
     
     def mypage
-        @myinfo = Info.where(user_id: current_user.id)  
+            @myinfo = Info.where(user_id: current_user.id) 
+           
     end
     
     def check_all_price
@@ -12,13 +13,13 @@ class SystemController < ApplicationController
                 
                 address = n.product_url #불러온 상품 정보에서 URL주소 뽑기
                 @doc = Nokogiri::HTML(open(address))  
-                @price = @doc.xpath(n.product_code).inner_text.gsub(/\D/, '') #새로운 가격 체크
+                @price = @doc.xpath(n.product_code)[0].inner_text.gsub(/\D/, '') #새로운 가격 체크
 
-                if n.product_price > @price
+                if n.product_price == @price
                 
                       mg_client = Mailgun::Client.new("key-be21c48c7ce4476a2024cb1789bb67c6") #메일보내기
                       message_params =  {
-                                         from: "master@saleyo.com",
+                                         from: "bargin.sale.yo@gmail.com",
                                          to: current_user.email, #여기엔 a.email 를 넣을 예정
                                          subject: n.product_name + ' 할인 정보',
                                          text: n.brand + ' ' + n.product_name + ' 상품이 ' + n.product_price + "원에서 " + @price.to_s + "원으로" + " 인하되었습니다."
@@ -35,7 +36,7 @@ class SystemController < ApplicationController
             
             end
         
-        redirect_to "/home/index"
+        redirect_to "/"
     
     end
     
@@ -43,10 +44,6 @@ class SystemController < ApplicationController
         @one_product = Info.find(params[:id])
         @one_product.destroy
         redirect_to "/system/mypage" 
-    end
-    
-    
-    def c
     end
     
     

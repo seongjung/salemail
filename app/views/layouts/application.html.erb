@@ -1,52 +1,65 @@
 <!DOCTYPE html>
+
 <html>
 <head>
+
   <link rel="icon" type="image/ico" href="/img/favicon.png"/>
-  <title>Sale-Yo!</title>
+  <title>Sale-Yo - 살래요</title>
   <meta charset="UTF-8">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://bootswatch.com/simplex/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/assets/login.css">
-  <!--<link rel="stylesheet" href="https://bootswatch.com/slate/bootstrap.min.css">-->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   
+  <script>
+    $( document ).ready(function() {
+        console.log( "document loaded" );
+    });
+ 
+    $( window ).load(function() {
+        console.log( "window loaded" );
+    });
+    </script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://bootswatch.com/simplex/bootstrap.min.css">
 
   
+  <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/nivo-lightbox.css" rel="stylesheet" type="text/css"/>
+	<link href="../assets/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/animations.css" rel="stylesheet"  type="text/css" />
+  <link href="../assets/style.css" rel="stylesheet"  type="text/css" >
+	<link href="../color/default.css" rel="stylesheet"  type="text/css" >
+	
   
 </head>
 <body>
-
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">가격알림</a>
-    </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-      
-      <%if user_signed_in? %>  
-        <li><a href="/system/mypage">마이페이지</a></li>
-        <li><a href="/users/sign_out" data-method="delete">로그아웃</a></li>
-      <%else%>
-        <li><a href="/users/sign_in">로그인</a></li>
-        <li><a href="/users/sign_up">회원가입</a></li>
-      <%end%>
-      
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-<div class="container well" style="margin-top:100px">
-
 <%= yield %>
+<!-- Core JavaScript Files -->
+  <script src="../js/jquery.min.js"></script>	 
+  <script src="../js/jquery.sticky.js"></script>
+  <script src="../js/jquery.easing.min.js"></script>	
+	<script src="../js/jquery.scrollTo.js"></script>
+	<script src="../js/jquery.appear.js"></script>
+	<script src="../js/stellar.js"></script>
+	<script src="../js/nivo-lightbox.min.js"></script>
+    <script src="../js/custom.js"></script>
+	<script src="../js/css3-animate-it.js"></script>
 
-</div>
+
+
+
+<script>
+  $(function(){
+      if(window.location.protocol != 'http:') {
+      location.href = location.href.replace("https://", "http://");
+    }});
+    
+    $('#myModal').on('shown.bs.modal', function () {
+      $('#modify_username').focus()
+    });
+</script>
+
 
 </body>
 </html>

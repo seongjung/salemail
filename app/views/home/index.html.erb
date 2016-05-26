@@ -1,18 +1,499 @@
 
-    <h1> 상품 가격 읽어오기 </h1>
 
-    <a href="/home/carhartt">Carhartt로 가기</a><br>
-    <a href="/home/brown">BrowmBreath로 가기</a><br>
-    <a href="/home/hnm">H&M로 가기</a><br>
-    <a href="/home/polo">Polo로 가기</a><br>
-    <!--<a href="/home/zara">Zara로 가기</a><br>-->
-    <a href="/home/musinsa">Musinsa로 가기</a><br>
-    <a href="/home/uniqlo">UNIQLO로 가기</a><br>
-    <a href="/home/eightseconds">8seconds로 가기</a><br>
-    <a href="/home/american">아메리칸어패럴로 가기</a></br>
-    <a href="/home/mixxo">MIXXO로 가기</a></br>
-    <a href="/home/oliveyoung">올리브영으로 가기</a></br>
-    <a href="/home/aritaum">아리따움으로 가기</a></br>
-    <a href="/home/imshop">test가기</a></br>
-    
+<div id="page-top" data-spy="scroll" data-target=".navbar-custom">
+	
+	<section class="hero" id="intro">
+            <div class="container">
+              <div class="row" >
+                <div class="col-md-8 col-md-offset-2 text-center inner">
+					<div class="animatedParent" >
+						<h1 class="animated fadeInDown" ><img src="../img/saleyo_mint2.png"></h1>
+						<p class="animated fadeInUp">내가 고른 상품의 세일 정보를 메일로 받아보세요 ! </p>
+			   		</div>
+              </div>
+             
+            </div>
+            </div>
+            <div class="next-section" >
+					<a class="go-to-about"><span></span></a>
+			</div><!-- /.next-section -->
+    </section>
+	
+	
+    <!-- Navigation -->
+    <div id="navigation">
+        <nav class="navbar navbar-custom" role="navigation">
+                              <div class="container">
+                                    <div class="row">
+                                 <div class="col-md-10">
+                                                      <!-- Brand and toggle get grouped for better mobile display -->
+                                          <div class="navbar-header">
+                                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                                                <i class="fa fa-bars"></i>
+                                                </button>
+                                          </div>
+                                                      <!-- Collect the nav links, forms, and other content for toggling -->
+                                                      <div class="collapse navbar-collapse" id="menu">
+                                                            <ul class="nav navbar-nav navbar-right">
+                                                                  <%if user_signed_in? %>
+                                                                    <li class="active"><a href="#intro"> </a></li>
+                                                                    <li><a href="/">Home</a></li>
+                                                                    <li><a href="/system/mypage">My page</a></li>
+                                                                    <li><a href="/users/sign_out" data-method="delete">Log out</a></li>
+                                                                  <%elsif%>
+                                                                    <li class="active"><a href="#intro"> </a></li>
+                                                                    <li><a href="/">Home</a></li>
+                                                                    <li><a href="/users/sign_in">Log in</a></li>				                                                                  
+                                                                    <li><a href="/users/sign_up">Sign up</a></li>
+                                                                  <%end%>
+                                                            </ul>
+                                                      </div>
+                                                      <!-- /.Navbar-collapse -->
+                             
+                                          </div>
+                                    </div>
+                              </div>
+                              <!-- /.container -->
+                        </nav>
+    </div> 
+    <!-- /Navigation -->  
 
+	<!-- Section: about -->
+    <section id="about" class="home-section color-dark bg-white">
+		<div class="container marginbot-50">
+			<div class="row">
+					<div class="section-heading text-center">
+					<h2 class="h-bold">Saleyo</h2>
+					<div class="divider-header"></div>
+					</div>
+			</div>
+		</div>
+
+		<div class="container">
+		<div class="row">
+            <div class="col-lg-8 col-lg-offset-2 animatedParent">
+				<div id="navbar">    
+				  <nav class="navbar navbar-default navbar-static-top" role="navigation">
+				            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+				                <ul class="nav navbar-nav">
+				                    <li class="dropdown">
+				                      <a class="dropdown-toggle" data-toggle="dropdown">의류<b class="caret"></b></a> 
+				                      	<ul class="dropdown-menu">
+				                            <li><a href="/home/carhartt">Carhartt</a></li>
+				                            <li><a href="/home/brown">BrowmBreath</a></li>
+				                            <li><a href="/home/hnm">H&M</a></li>
+				                            <li><a href="/home/eightseconds">8seconds</a></li>
+				                            <li><a href="/home/american">American apparel</a></li>
+				                            <li><a href="/home/mixxo">MIXXO</a></li>
+				                            <!--잠정적폐업<li><a href="/home/uniqlo">UNIQLO</a></li>-->
+				                        </ul>
+				                    </li>
+				                    <li class="dropdown">
+				                      <a class="dropdown-toggle" data-toggle="dropdown">메이크업<b class="caret"></b></a> 
+				                      	<ul class="dropdown-menu">
+				                            <li><a href="/home/oliveyoung">Olive young</a></li>
+				                            <li><a href="/home/aritaum">Aritaum</a></li>
+				                        </ul>
+				                    </li>
+				                    <li class="dropdown">
+				                      <a class="dropdown-toggle" data-toggle="dropdown">편집샵<b class="caret"></b></a> 
+				                      	<ul class="dropdown-menu">
+				                            <li><a href="/home/musinsa">Musinsa</a></li>
+				                            <li><a href="/home/imshop">Imshop</a></li>
+				                        </ul>
+				                    </li>
+								</ul>
+				            </div>
+				            <!-- /.navbar-collapse -->
+				        </nav>
+				</div>
+				
+            </div>
+            
+    <!-- #region Jssor Slider Begin -->
+    <!-- Generated by Jssor Slider Maker. -->
+    <!-- This demo works without jquery library. -->
+
+    <script type="text/javascript" src="js/jssor.slider.min.js"></script>
+    <!-- use jssor.slider.debug.js instead for debug -->
+    <script>
+        jssor_1_slider_init = function() {
+            
+            var jssor_1_SlideshowTransitions = [
+              {$Duration:1200,$Opacity:2}
+            ];
+            
+            var jssor_1_options = {
+              $AutoPlay: true,
+              $SlideshowOptions: {
+                $Class: $JssorSlideshowRunner$,
+                $Transitions: jssor_1_SlideshowTransitions,
+                $TransitionsOrder: 1
+              },
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
+            
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+            
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizing
+            function ScaleSlider() {
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    refSize = Math.min(refSize, 600);
+                    jssor_1_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+            ScaleSlider();
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            //responsive code end
+        };
+    </script>
+
+    <style>
+        
+        /* jssor slider bullet navigator skin 05 css */
+        /*
+        .jssorb05 div           (normal)
+        .jssorb05 div:hover     (normal mouseover)
+        .jssorb05 .av           (active)
+        .jssorb05 .av:hover     (active mouseover)
+        .jssorb05 .dn           (mousedown)
+        */
+        .jssorb05 {
+            position: absolute;
+        }
+        .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+            position: absolute;
+            /* size of bullet elment */
+            width: 16px;
+            height: 16px;
+            background: url('img/b05.png') no-repeat;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .jssorb05 div { background-position: -7px -7px; }
+        .jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
+        .jssorb05 .av { background-position: -67px -7px; }
+        .jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
+
+        /* jssor slider arrow navigator skin 12 css */
+        /*
+        .jssora12l                  (normal)
+        .jssora12r                  (normal)
+        .jssora12l:hover            (normal mouseover)
+        .jssora12r:hover            (normal mouseover)
+        .jssora12l.jssora12ldn      (mousedown)
+        .jssora12r.jssora12rdn      (mousedown)
+        */
+        .jssora12l, .jssora12r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 30px;
+            height: 46px;
+            cursor: pointer;
+            background: url('img/a12.png') no-repeat;
+            overflow: hidden;
+        }
+        .jssora12l { background-position: -16px -37px; }
+        .jssora12r { background-position: -75px -37px; }
+        .jssora12l:hover { background-position: -136px -37px; }
+        .jssora12r:hover { background-position: -195px -37px; }
+        .jssora12l.jssora12ldn { background-position: -256px -37px; }
+        .jssora12r.jssora12rdn { background-position: -315px -37px; }
+    </style>
+
+
+    <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 600px; height: 300px; overflow: hidden; visibility: hidden;">
+        <!-- Loading Screen -->
+        <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+            <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+        </div>
+        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 600px; height: 300px; overflow: hidden;">
+            <div data-p="112.50" style="display: none;">
+                <a href ="http://www.a-land.co.kr/shop/main/index.php" target="_blank"><img data-u="image" src="../img/event2.jpg" /></a>
+            </div>
+            <div data-p="112.50" style="display: none;">
+                <a href ="http://www.uniqlo.kr/" target="_blank">
+                <img data-u="image" src="../img/event1.jpg" /></a>
+            </div>
+            <div data-p="112.50" style="display: none;">
+                <a href ="http://www.musinsa.com" target="_blank">
+                <img data-u="image" src="../img/event4.jpg" /></a>
+            </div>
+            <div data-p="112.50" style="display: none;">
+                <a href ="http://www.oliveyoungshop.com" target="_blank">
+                <img data-u="image" src="../img/event3.jpg" /></a>
+            </div>
+            <a data-u="ad" href="http://www.jssor.com" style="display:none">jQuery Slider</a>
+        
+        </div>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">
+            <!-- bullet navigator item prototype -->
+            <div data-u="prototype" style="width:16px;height:16px;"></div>
+        </div>
+        <!-- Arrow Navigator -->
+        <span data-u="arrowleft" class="jssora12l" style="top:0px;left:0px;width:30px;height:46px;" data-autocenter="2"></span>
+        <span data-u="arrowright" class="jssora12r" style="top:0px;right:0px;width:30px;height:46px;" data-autocenter="2"></span>
+    </div>
+    <script>
+        jssor_1_slider_init();
+    </script>
+
+    <!-- #endregion Jssor Slider End -->
+
+        </div>
+		</div>
+		<div class="next-section2" >
+					<a class="go-to-service"><span></span></a>
+		</div><!-- /.next-section -->
+	</section>
+	<!-- /Section: about -->
+	
+	
+	<!-- Section: services -->
+    <section id="service" class="home-section color-dark bg-gray">
+		<div class="container marginbot-50">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div>
+					<div class="section-heading text-center">
+					<h2 class="h-bold">Shop list</h2>
+					<div class="divider-header"></div>
+					</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="text-center">
+		<div class="container">
+
+        <div class="row animatedParent">
+            <div class="col-xs-6 col-sm-4 col-md-4">
+				<div class="animated rotateInDownLeft">
+                <div class="service-box">
+					<div class="service-icon">
+						<img src="../img/clothes.png"> 
+					</div>
+					<div class="service-desc">						
+						<h5>Clothes</h5>
+						<div class="divider-header"></div>
+						<ul><a href="/home/carhartt">Carhartt</a></ul>
+				        <ul><a href="/home/brown">BrowmBreath</a></ul>
+				        <ul><a href="/home/hnm">H&M</a></ul>
+				        <ul><a href="/home/eightseconds">8seconds</a></ul>
+				        <ul><a href="/home/eightseconds">American apparel</a></ul>
+				        <ul><a href="/home/mixxo">MIXXO</a></ul>
+				        <ul><a href="/home/polo">Polo</a></ul>
+				        <!--잠정적폐업<ul><a href="/home/uniqlo">UNIQLO</a></ul>-->
+					</div>
+                </div>
+				</div>
+            </div>
+			<div class="col-xs-6 col-sm-4 col-md-4">
+				<div class="animated rotateInDownLeft slow">
+                <div class="service-box">
+					<div class="service-icon">
+						<img src="../img/makeup.png">  
+					</div>
+					<div class="service-desc">
+						<h5>Makeup</h5>
+						<div class="divider-header"></div>
+						<ul><a href="/home/oliveyoung">Olive young</a></ul>
+				        <ul><a href="/home/aritaum">Aritaum</a></ul>
+				        <ul><a href="#">.</a></ul>
+				        <ul><a href="#">.</a></ul>
+				        <ul><a href="#">.</a></ul>
+				        <ul><a href="#">.</a></ul>
+					</div>
+                </div>
+				</div>
+            </div>
+			<div class="col-xs-6 col-sm-4 col-md-4">
+				<div class="animated rotateInDownLeft slower">
+                <div class="service-box">
+					<div class="service-icon">
+						<img src="../img/store.png">
+					</div>
+					<div class="service-desc">
+						<h5>Select shop</h5>
+						<div class="divider-header"></div>
+						<ul><a href="/home/musinsa">Musinsa</a></ul>
+				        <ul><a href="/home/imshop">Imshop</a></ul>
+				        <ul><a href="#">.</a></ul>
+				        <ul><a href="#">.</a></ul>
+				        <ul><a href="#">.</a></ul>
+					</div>
+                </div>
+				</div>
+            </div>
+
+        </div>		
+		</div>
+		</div>
+		<div class="next-section2" >
+					<a class="go-to-works"><span></span></a>
+		</div><!-- /.next-section -->
+	</section>
+	<!-- /Section: services -->
+	
+
+	<!-- Section: works -->
+    <section id="works" class="home-section color-dark text-center bg-white">
+		<div class="container marginbot-50">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div>
+					<div class="animatedParent">
+					<div class="section-heading text-center">
+					<h2 class="h-bold animated bounceInDown">만든사람들</h2>
+					<div class="divider-header"></div>
+					</div>
+					</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="container">
+
+            <div class="row animatedParent">
+                <div class="col-sm-12 col-md-12 col-lg-12" >
+
+                    <div class="row gallery-item">
+                    	<div class="col-md-2 col-md-offset-1 animated fadeInUp">
+							<a href="img/works/sj.jpg" title="yd97003@naver.com" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+								<img src="img/works/sj.jpg" class="img-responsive" alt="img">
+							</a>
+						</div>
+                        <div class="col-md-2 animated fadeInUp">
+							<a href="img/works/jh.jpg" title="viva.jihye.lee@gmail.com" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+								<img src="img/works/jh.jpg" class="img-responsive" alt="img">
+							</a>
+						</div>
+						<div class="col-md-2 animated fadeInUp slow">
+							<a href="img/works/ys.jpg" title="yoonisus@naver.com" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+								<img src="img/works/ys.jpg" class="img-responsive" alt="img">
+							</a>
+						</div>
+						<div class="col-md-2 animated fadeInUp slower">
+							<a href="img/works/jw.jpg" title="ljw3728@naver.com" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+								<img src="img/works/jw.jpg" class="img-responsive" alt="img">
+							</a>
+						</div>
+						<div class="col-md-2 animated fadeInUp">
+							<a href="img/works/sy.jpg" title="josang1204@gmail.com" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+								<img src="img/works/sy.jpg" class="img-responsive" alt="img">
+							</a>
+						</div>
+						
+					</div>
+	
+                </div>
+            </div>	
+		</div>
+
+	</section>
+	<!-- /Section: works -->
+
+	<!-- Section: contact -->
+    <section id="contact" class="home-section nopadd-bot color-dark bg-gray text-center">
+		<div class="container marginbot-50">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="animatedParent">
+					<div class="section-heading text-center">
+					<h2 class="h-bold animated bounceInDown">Get in touch with us</h2>
+					 <p class="h-bold animated bounceInDown" style = "font-size: 18px"> 할인 알림을 원하는 사이트를 알려주세요!</p>
+					<div class="divider-header"></div>
+					</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		
+		<div class="container">
+
+			<div class="row marginbot-80">
+				<div class="col-md-8 col-md-offset-2">
+						
+						<form id="contact-form" action="/home/mailling" method ="POST">
+						<div class="row marginbot-20">
+							<div class="col-md-6 xs-marginbot-20">
+								<input type="text" class="form-control input-lg" name="name" placeholder="Enter name" required="required" />
+							</div>
+							<div class="col-md-6">
+							  <% if user_signed_in?%>
+								<input type="email" class="form-control input-lg" name="email" value="<%=current_user.email%>" required="required" />
+								<% elsif%>
+								<input type="email" class="form-control input-lg" name="email" placeholder="Enter email" required="required" />
+								<%end%>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+										<input type="text" class="form-control input-lg" name="subject" placeholder="Subject" required="required" />
+								</div>
+								<div class="form-group">
+									<textarea name="message" class="form-control" rows="4" cols="25" required="required"
+										placeholder="Message"></textarea>
+								</div>						
+								<button type="submit" class="btn btn-skin btn-lg btn-block" id="btnContactUs">
+									Send Message</button>
+							</div>
+						</div>
+						</form>
+						
+				</div>
+			</div>	
+
+
+		</div>
+		<div class="next-section3">
+						<a class="go-to-intro"><span></span></a>
+					</div><!-- /.next-section -->
+	</section>
+	<!-- /Section: contact -->
+
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<ul class="footer-menu">
+						<li><a href="#">Home</a></li>
+					</ul>
+				</div>
+				<div class="col-md-6 text-right">
+
+					<p>&copy; Copyright 2016 - 살래요 by 멋쟁이 사자처럼 at 성균관대학교 </br>
+							  너와나의연결고리 bargin.sale.yo@gmail.com</p>
+                    <!-- 
+                        All links in the footer should remain intact. 
+                        Licenseing information is available at: http://bootstraptaste.com/license/
+                        You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Bocor
+                    -->
+				</div>
+			</div>	
+		</div>
+	</footer>
+
+</div>

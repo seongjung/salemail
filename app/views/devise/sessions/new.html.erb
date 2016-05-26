@@ -1,67 +1,113 @@
-<!--<!DOCTYPE html>-->
-<!--<html >-->
-<!--  <head>-->
+<%= render :partial => "/layouts/navbar" %>
 
-<!--<style>-->
-<!--.border-form-div {-->
-<!--  max-width: 300px;-->
-<!--  padding: 19px 29px 29px;-->
-<!--  margin: 0 auto 20px;-->
-<!--  background-color: #fff;-->
-<!--  border: 1px solid #e5e5e5;-->
-<!--  -webkit-border-radius: 5px;-->
-<!--     -moz-border-radius: 5px;-->
-<!--          border-radius: 5px;-->
-<!--  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);-->
-<!--     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);-->
-<!--          box-shadow: 0 1px 2px rgba(0,0,0,.05);-->
-<!--}-->
-<!--.border-form-div .form-signin-heading,-->
-<!--.border-form-div .checkbox {-->
-<!--  margin-bottom: 10px;-->
-<!--}-->
-<!--.border-form-div input[type="text"],-->
-<!--.border-form-div input[type="email"],-->
-<!--.border-form-div input[type="password"] {-->
-<!--  font-size: 16px;-->
-<!--  height: auto;-->
-<!--  margin-bottom: 15px;-->
-<!--  padding: 7px 9px;-->
-<!--}-->
-<!--</style>-->
+<style>
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
 
-<!--</head>-->
+.form {
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  /*text-align: center;*/
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
 
-<!--<body>-->
+.input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
 
-<div class="border-form-div">
 
-  <center><h2>로그인</h2>      </center>
+.button{
+    font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #3dc9b3;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.button:hover,
+.button:active,
+.button:focus {
+  opacity:0.6;
+  color:#ffffff;
+}
+
+
+
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.form .register-form {
+  display: none;
+}
+
+
+</style>
+
+<div class="container" style="margin-top:100px">
+
+
+<div class="login-page">
+  <div class="form">
+  <div class="login-form">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :Email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true, :class => 'input' %>
   </div>
 
   <div class="field">
     <%= f.label :비밀번호%><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off" , :class => 'input'%>
   </div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :아이디저장 %>
-    </div>
-  <% end -%>
 
   <div class="actions">
-    <%= f.submit "로그인" %>
+    <%= f.submit "로그인", :class => 'button'%>
   </div>
+  <br>
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me%>
+      <%= f.label :Email저장 %>
+    </div>
+  <% end %>
+  
 <% end %>
-
+<br>
 <%= render "devise/shared/links" %>
-</div>    
+</div>   
+</div>
+</div>
     
-    
-    
+</div>
